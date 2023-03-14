@@ -5,7 +5,7 @@ function App() {
   return (
     <>
     
-    <Navg title = "TextUtils"/>
+    <Navg title = "UtilText" aboutText = "About Us"/>
    
     
    

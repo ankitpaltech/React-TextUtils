@@ -4,6 +4,9 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
+import PropTypes from 'prop-types'
+
+
 export default function Navg(props) {
   return (
     <div>
@@ -14,7 +17,7 @@ export default function Navg(props) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">About</Nav.Link>
+            <Nav.Link href="#link">{props.aboutText}</Nav.Link>
             
           </Nav>
         </Navbar.Collapse>
@@ -24,4 +27,13 @@ export default function Navg(props) {
     </div>
   )
 }
+
+Navg.prototype = {
+    title : PropTypes.string.isRequired,
+    aboutText: PropTypes.string.isRequired};
+
+Navg.defaultProps = {
+    title : "set title",
+    aboutText : "set about"
+};
 
