@@ -1,6 +1,7 @@
-
-import Navg from './components/Navg';
 import TextForm from './components/TextForm';
+import About from './components/About';
+import Navg from './components/Navg';
+// import TextForm from './components/TextForm';
 
 function App() {
   return (
@@ -9,6 +10,8 @@ function App() {
     <Navg title = "UtilText" aboutText = "About Us"/>
     <div className="container my-3">
     <TextForm heading = "Enter The Text To Analyze"/>
+    {/* <About/> */}
+
     </div>
     
     
