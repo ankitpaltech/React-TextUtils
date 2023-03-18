@@ -1,6 +1,6 @@
 import React , {useState} from 'react'
-
-import Form from 'react-bootstrap/Form';
+// import Alerts from './Alerts';
+// import Form from 'react-bootstrap/Form';
 
 export default function TextForm(props) {
 
@@ -9,11 +9,13 @@ export default function TextForm(props) {
           // console.log("changetoUpperchase" + text);
           let newText = text.toUpperCase();
           setText( newText);
+          props.showAlert(" Converted to Upper case" , "success")
         };
         const handleLoClick =() => {
           // console.log("changetoUpperchase" + text);
           let newText = text.toLowerCase();
           setText( newText);
+          props.showAlert(" Converted to Lower Case" , "success")
         };
 
         const handleOnChange = (event) =>{
@@ -25,15 +27,24 @@ export default function TextForm(props) {
         
           let newText = " ";
           setText( newText);
+          props.showAlert(" All Cleared " , "warning")
         };
-        const handlecopy =()=>{
-          var text1 = document.getElementById("myBox");
-          text1.Select();
-          navigator.clipboard.writeText(text1.value);
+        const handlecopy = () =>{
+          var copyText = document.getElementById("myBox");
+
+          // Select the text field
+          copyText.select();
+          
+        
+           // Copy the text inside the text field
+          navigator.clipboard.writeText(copyText.value);
+          props.showAlert(" Text Copied" , "success")
         }
         const handleExtraSpace =()=>{
-           var newText = text.split(/[]+/);
+           let newText = text.split(/[ ]+/);
            setText(newText.join(" "));
+           
+          props.showAlert(" Removed Extra Space" , "success")
 
         }
         
