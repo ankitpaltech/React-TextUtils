@@ -44,10 +44,10 @@ export default function TextForm(props) {
     
       
        
-        <div className=" container mb-3">
+        <div className=" container mb-4">
 
-        <h1>{props.heading}</h1>
-        <textarea name="" id="myBox" cols="120" rows="8" value= {text} onChange = {handleOnChange}></textarea>
+        <h1 className={`text-${props.textcolor}`}>{props.heading}</h1>
+        <textarea className={`text-${props.textcolor}`} name="" id="myBox" cols="120" rows="8" value= {text} onChange = {handleOnChange} style={{backgroundColor: props.mode==="dark"?"grey":"white"}}></textarea>
         <br />
         <button className="btn btn-primary mx-3" onClick={handleUpClick}>
             Convert To UpperCase
@@ -67,12 +67,12 @@ export default function TextForm(props) {
 
         </div>
 
-        <div className="container my-3">
-        <h1>Your Text Summery</h1>
-        <p>{text.split(" ").length} words and {text.length} characters.</p>
-        <p>{0.008*text.split(" ").length} Mintues to read.</p>
-        <h2>Preview</h2>
-        <p>{text}</p>
+        <div className="container my-">
+        <h1 className={`text-${props.textcolor}`}>Your Text Summery</h1>
+        <p className={`text-${props.textcolor}`}>{text.split(" ").length} words and {text.length} characters.</p>
+        <p className={`text-${props.textcolor}`}>{0.008*text.split(" ").length} Mintues to read.</p>
+        <h2 className={`text-${props.textcolor}`}>Preview</h2>
+        <p className={`text-${props.textcolor}`}>{ text.length>0? text:"enter something to the textbox above to preview it."}</p>
         </div>
         
 
