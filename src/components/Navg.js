@@ -16,8 +16,8 @@ export default function Navg(props) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className={`me-auto text-${props.textcolor}`}>
-            <Nav.Link href="#home" className={`text-${props.textcolor}`}>Home</Nav.Link>
-            <Nav.Link href="#link"className={` text-${props.textcolor}`}>{props.aboutText}</Nav.Link>
+            <Nav.Link href="/" className={`text-${props.textcolor}`}>Home</Nav.Link>
+            <Nav.Link href="/About"className={` text-${props.textcolor}`}>{props.aboutText}</Nav.Link>
             
           </Nav>
         </Navbar.Collapse>
